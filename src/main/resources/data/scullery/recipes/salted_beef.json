@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scullery:sliced_beef"
+    },
+    {
+      "item": "scullery:salt"
+    }
+  ],
+  "result":
+  {
+    "item": "scullery:salted_beef",
+    "count": 1
+  }
+}

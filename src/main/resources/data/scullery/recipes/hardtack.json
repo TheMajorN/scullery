@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "scullery:dough_balls"
+  },
+  "result": "scullery:hardtack",
+  "experience": 0.35,
+  "cookingtime": 300
+}

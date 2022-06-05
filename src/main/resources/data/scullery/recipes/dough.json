@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "scullery:flour"
+    },
+    {
+      "item": "scullery:salt"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result":
+    {
+      "item": "scullery:dough",
+      "count": 1
+    }
+}

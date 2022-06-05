@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "scullery:blocks/rosemary_stage0"
+  }
+}

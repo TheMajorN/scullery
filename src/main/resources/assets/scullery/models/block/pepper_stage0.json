@@ -1,0 +1,6 @@
+{
+	 "parent": "minecraft:block/crop",
+	 "textures": {
+	 "crop": "scullery:blocks/pepper_stage0"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "scullery:olive_log",
+    "scullery:olive_wood",
+    "scullery:stripped_olive_log",
+    "scullery:stripped_olive_wood",
+    "scullery:chestnut_log",
+    "scullery:chestnut_wood",
+    "scullery:stripped_chestnut_log",
+    "scullery:stripped_chestnut_wood"
+  ]
+}
