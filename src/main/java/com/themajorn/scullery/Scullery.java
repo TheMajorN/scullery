@@ -70,6 +70,7 @@ public class Scullery {
         RenderTypeLookup.setRenderLayer(BlockInit.CHESTNUT_LEAVES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(BlockInit.CHESTNUT_SAPLING.get(), RenderType.cutout());
 
+        ScreenManager.register(ContainerTypeInit.DESICCATOR_CONTAINER.get(), DesiccatorScreen::new);
     }
 }
 

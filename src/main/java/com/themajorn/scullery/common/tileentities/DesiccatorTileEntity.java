@@ -2,6 +2,7 @@ package com.themajorn.scullery.common.tileentities;
 
 import com.themajorn.scullery.Scullery;
 import com.themajorn.scullery.common.containers.DesiccatorContainer;
+import com.themajorn.scullery.core.util.ItemInit;
 import com.themajorn.scullery.core.util.TileEntityTypeInit;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,15 +10,27 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.LockableLootTileEntity;
-import net.minecraft.tileentity.LockableTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
-public class DesiccatorTileEntity extends LockableLootTileEntity {
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+public class DesiccatorTileEntity extends TileEntity {
+
+    private final ItemStackHandler itemHandler = createHandler();
+    private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
 
     public static int slots = 5;
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
@@ -31,80 +44,58 @@ public class DesiccatorTileEntity extends LockableLootTileEntity {
     }
 
     @Override
-    protected ITextComponent getDefaultName() {
-        return new TranslationTextComponent("container." + Scullery.MOD_ID + ".desiccator");
-    }
-
-    @Override
-    protected Container createMenu(int id, PlayerInventory player) {
-        return new DesiccatorContainer(id, player, this);
-    }
-
-    @Override
-    public int getContainerSize() {
-        return slots;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public ItemStack getItem(int p_70301_1_) {
-        return null;
-    }
-
-    @Override
-    public ItemStack removeItem(int p_70298_1_, int p_70298_2_) {
-        return null;
-    }
-
-    @Override
-    public ItemStack removeItemNoUpdate(int p_70304_1_) {
-        return null;
-    }
-
-    @Override
-    public void setItem(int p_70299_1_, ItemStack p_70299_2_) {
-
-    }
-
-    @Override
-    public boolean stillValid(PlayerEntity p_70300_1_) {
-        return false;
-    }
-
-    @Override
-    public void clearContent() {
-
-    }
-
-    @Override
-    protected NonNullList<ItemStack> getItems() {
-        return this.items;
-    }
-
-    @Override
-    protected void setItems(NonNullList<ItemStack> itemIn) {
-        this.items = itemIn;
-    }
-
-    @Override
     public CompoundNBT save(CompoundNBT compound) {
-        super.save(compound);
-        if (this.trySaveLootTable(compound)) {
-            ItemStackHelper.saveAllItems(compound, this.items);
-        }
-        return compound;
+        compound.put("inv", itemHandler.serializeNBT());
+        return super.save(compound);
     }
 
     @Override
     public void load(BlockState state, CompoundNBT nbt) {
+        itemHandler.deserializeNBT(nbt.getCompound("inv"));
         super.load(state, nbt);
-        this.items = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
-        if (!this.tryLoadLootTable(nbt)) {
-            ItemStackHelper.loadAllItems(nbt, this.items);
+    }
+
+    private ItemStackHandler createHandler() {
+        return new ItemStackHandler(2) {
+            @Override
+            protected void onContentsChanged(int slot) {
+                setRemoved();
+            }
+
+            @Override
+            public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+                switch (slot) {
+                    case 0: return stack.getItem() == Items.APPLE;
+                    case 1: return stack.getItem() == Items.SWEET_BERRIES;
+                    default:
+                        return false;
+                }
+            }
+
+            @Override
+            public int getSlotLimit(int slot) {
+                return 1;
+            }
+
+            @Nonnull
+            @Override
+            public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
+                if(!isItemValid(slot, stack)) {
+                    return stack;
+                }
+
+                return super.insertItem(slot, stack, simulate);
+            }
+        };
+    }
+
+    @Nonnull
+    @Override
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+        if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return handler.cast();
         }
+
+        return super.getCapability(cap, side);
     }
 }

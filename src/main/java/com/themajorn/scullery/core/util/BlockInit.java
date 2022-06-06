@@ -102,6 +102,6 @@ public class BlockInit {
             () -> new GrainMillBlock(AbstractBlock.Properties.of(Material.STONE)));
 
     public static final RegistryObject<Block> DESICCATOR = BLOCKS.register("desiccator",
-            DesiccatorBlock::new);
+            () -> new DesiccatorBlock(AbstractBlock.Properties.of(Material.GLASS)));
 
 }

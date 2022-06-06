@@ -35,7 +35,7 @@
                   ]
                 }
               ],
-              "name": "minecraft:chestnut_leaves"
+              "name": "scullery:chestnut_leaves"
             },
             {
               "type": "minecraft:item",
@@ -54,7 +54,7 @@
                   ]
                 }
               ],
-              "name": "minecraft:chestnut_sapling"
+              "name": "scullery:chestnut_sapling"
             }
           ]
         }
