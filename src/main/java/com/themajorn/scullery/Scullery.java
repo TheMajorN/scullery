@@ -70,6 +70,8 @@ public class Scullery {
         RenderTypeLookup.setRenderLayer(BlockInit.CHESTNUT_LEAVES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(BlockInit.CHESTNUT_SAPLING.get(), RenderType.cutout());
 
+        RenderTypeLookup.setRenderLayer(BlockInit.DESICCATOR.get(), RenderType.translucent());
+
         ScreenManager.register(ContainerTypeInit.DESICCATOR_CONTAINER.get(), DesiccatorScreen::new);
     }
 }
@@ -79,7 +81,7 @@ TO-DO LIST:
 
 PHASE I
 ========
-Dried Fruit - Desiccator
+Desiccator
 Nuts - Almonds, Walnuts
 Adventuring Ration - Wrap jerky, dried fruit, hardtack, and nuts in paper
 ========

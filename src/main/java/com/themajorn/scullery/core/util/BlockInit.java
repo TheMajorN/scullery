@@ -91,6 +91,27 @@ public class BlockInit {
     public static final RegistryObject<Block> CHESTNUT_SAPLING = BLOCKS.register("chestnut_sapling",
             () -> new SaplingBlock(new ChestnutTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> ALMOND_LOG = BLOCKS.register("almond_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_LOG)));
+
+    public static final RegistryObject<Block> ALMOND_WOOD = BLOCKS.register("almond_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.OAK_WOOD)));
+
+    public static final RegistryObject<Block> STRIPPED_ALMOND_LOG = BLOCKS.register("stripped_almond_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final RegistryObject<Block> STRIPPED_ALMOND_WOOD = BLOCKS.register("stripped_almond_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final RegistryObject<Block> ALMOND_PLANK = BLOCKS.register("almond_plank",
+            () -> new Block(AbstractBlock.Properties.copy(Blocks.OAK_PLANKS)));
+
+    public static final RegistryObject<Block> ALMOND_LEAVES = BLOCKS.register("almond_leaves",
+            () -> new LeavesBlock(Block.Properties.copy(Blocks.OAK_LEAVES).noOcclusion()));
+
+    public static final RegistryObject<Block> ALMOND_SAPLING = BLOCKS.register("almond_sapling",
+            () -> new SaplingBlock(new AlmondTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
+
 
 
     // === APPLIANCES === //

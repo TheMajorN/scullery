@@ -13,7 +13,10 @@
   "item.scullery.hardtack": "Hardtack",
   "item.scullery.acorn": "Acorn",
   "item.scullery.olive": "Olive",
-  "item.scullery.chestnut": "Chestnut",
+  "item.scullery.chestnut": "Raw Chestnut",
+  "item.scullery.open_chestnut": "Chestnut",
+  "item.scullery.apple_slices": "Apple Slices",
+  "item.scullery.dried_apple_slices": "Dried Apple Slices",
 
   "block.scullery.olive_log": "Olive Log",
   "block.scullery.olive_leaves": "Olive Leaves",

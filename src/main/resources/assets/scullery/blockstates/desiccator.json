@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model":  "scullery:block/desiccator"},
+    "facing=south": { "model":  "scullery:block/desiccator", "y":  180},
+    "facing=east": { "model":  "scullery:block/desiccator", "y":  270},
+    "facing=west": { "model":  "scullery:block/desiccator", "y":  90}
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.DarkOakFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.MegaPineFoliagePlacer;
 import net.minecraft.world.gen.trunkplacer.DarkOakTrunkPlacer;
+import net.minecraft.world.gen.trunkplacer.FancyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.ForkyTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
@@ -37,6 +38,15 @@ public class ModConfiguredFeatures {
                     new BaseTreeFeatureConfig.Builder(
                             new SimpleBlockStateProvider(BlockInit.CHESTNUT_LOG.get().defaultBlockState()),
                             new SimpleBlockStateProvider(BlockInit.CHESTNUT_LEAVES.get().defaultBlockState()),
+                            new BlobFoliagePlacer(FeatureSpread.fixed(1), FeatureSpread.fixed(2), 5),
+                            new FancyTrunkPlacer(4, 3, 2),
+                            new ThreeLayerFeature(3, 1, 0, 1, 1, OptionalInt.empty()))).ignoreVines().build()));
+
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> ALMOND =
+            register("almond", Feature.TREE.configured((
+                    new BaseTreeFeatureConfig.Builder(
+                            new SimpleBlockStateProvider(BlockInit.ALMOND_LOG.get().defaultBlockState()),
+                            new SimpleBlockStateProvider(BlockInit.ALMOND_LEAVES.get().defaultBlockState()),
                             new MegaPineFoliagePlacer(FeatureSpread.fixed(1), FeatureSpread.fixed(2), FeatureSpread.fixed(3)),
                             new ForkyTrunkPlacer(4, 3, 1),
                             new ThreeLayerFeature(3, 1, 0, 1, 1, OptionalInt.empty()))).ignoreVines().build()));
