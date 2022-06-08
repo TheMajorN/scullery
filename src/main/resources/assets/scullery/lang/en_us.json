@@ -30,6 +30,12 @@
   "block.scullery.chestnut_sapling": "Chestnut Sapling",
   "block.scullery.stripped_chestnut_log": "Stripped Chestnut Log",
   "block.scullery.stripped_chestnut_wood": "Stripped Chestnut Wood",
+  "block.scullery.almond_log": "Almond Log",
+  "block.scullery.almond_leaves": "Almond Leaves",
+  "block.scullery.almond_wood": "Almond Wood",
+  "block.scullery.almond_sapling": "Almond Sapling",
+  "block.scullery.stripped_almond_log": "Stripped Almond Log",
+  "block.scullery.stripped_almond_wood": "Stripped Almond Wood",
   "block.scullery.salt_block": "Block of Salt",
   "block.scullery.desiccator": "Desiccator",
 

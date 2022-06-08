@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cross",
+	"textures": {
+	"cross": "scullery:blocks/almond_sapling"
+	}
+}

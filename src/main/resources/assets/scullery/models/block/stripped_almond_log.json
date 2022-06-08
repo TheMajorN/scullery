@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+	"end": "scullery:blocks/stripped_almond_log",
+	"side": "scullery:blocks/stripped_almond_log"
+	}
+}

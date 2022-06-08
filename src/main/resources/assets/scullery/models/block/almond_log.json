@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+	"end": "scullery:blocks/almond_log_top",
+	"side": "scullery:blocks/almond_log"
+	}
+}

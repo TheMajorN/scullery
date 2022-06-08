@@ -1,0 +1,6 @@
+{
+	"parent": "block/leaves",
+	"textures": {
+	"all": "scullery:blocks/almond_leaves"
+	}
+}

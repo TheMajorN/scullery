@@ -82,7 +82,7 @@ TO-DO LIST:
 PHASE I
 ========
 Desiccator
-Nuts - Almonds, Walnuts
+Nuts - Almonds
 Adventuring Ration - Wrap jerky, dried fruit, hardtack, and nuts in paper
 ========
  */
