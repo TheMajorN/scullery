@@ -12,11 +12,13 @@
   "item.scullery.dough_balls": "Balls of Dough",
   "item.scullery.hardtack": "Hardtack",
   "item.scullery.acorn": "Acorn",
+  "item.scullery.almond": "Almond",
   "item.scullery.olive": "Olive",
   "item.scullery.chestnut": "Raw Chestnut",
   "item.scullery.open_chestnut": "Chestnut",
   "item.scullery.apple_slices": "Apple Slices",
   "item.scullery.dried_apple_slices": "Dried Apple Slices",
+  "item.scullery.adventuring_ration": "Adventuring Rations ",
 
   "block.scullery.olive_log": "Olive Log",
   "block.scullery.olive_leaves": "Olive Leaves",

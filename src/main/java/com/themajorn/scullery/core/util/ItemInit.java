@@ -18,78 +18,6 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Scullery.MOD_ID);
 
-    // === BLOCK ITEMS === //
-
-    public static final RegistryObject<Item> OLIVE_LOG_ITEM = ITEMS.register("olive_log",
-            () -> new BlockItemBase(BlockInit.OLIVE_LOG.get()));
-
-    public static final RegistryObject<Item> OLIVE_WOOD_ITEM = ITEMS.register("olive_wood",
-            () -> new BlockItemBase(BlockInit.OLIVE_WOOD.get()));
-
-    public static final RegistryObject<Item> STRIPPED_OLIVE_LOG_ITEM = ITEMS.register("stripped_olive_log",
-            () -> new BlockItemBase(BlockInit.STRIPPED_OLIVE_LOG.get()));
-
-    public static final RegistryObject<Item> STRIPPED_OLIVE_WOOD_ITEM = ITEMS.register("stripped_olive_wood",
-            () -> new BlockItemBase(BlockInit.STRIPPED_OLIVE_WOOD.get()));
-
-    public static final RegistryObject<Item> OLIVE_PLANK_ITEM = ITEMS.register("olive_plank",
-            () -> new BlockItemBase(BlockInit.OLIVE_PLANK.get()));
-
-    public static final RegistryObject<Item> OLIVE_LEAVES_ITEM = ITEMS.register("olive_leaves",
-            () -> new BlockItemBase(BlockInit.OLIVE_LEAVES.get()));
-
-    public static final RegistryObject<Item> OLIVE_SAPLING_ITEM = ITEMS.register("olive_sapling",
-            () -> new BlockItemBase(BlockInit.OLIVE_SAPLING.get()));
-
-    public static final RegistryObject<Item> CHESTNUT_LOG_ITEM = ITEMS.register("chestnut_log",
-            () -> new BlockItemBase(BlockInit.CHESTNUT_LOG.get()));
-
-    public static final RegistryObject<Item> CHESTNUT_WOOD_ITEM = ITEMS.register("chestnut_wood",
-            () -> new BlockItemBase(BlockInit.CHESTNUT_WOOD.get()));
-
-    public static final RegistryObject<Item> STRIPPED_CHESTNUT_LOG_ITEM = ITEMS.register("stripped_chestnut_log",
-            () -> new BlockItemBase(BlockInit.STRIPPED_CHESTNUT_LOG.get()));
-
-    public static final RegistryObject<Item> STRIPPED_CHESTNUT_WOOD_ITEM = ITEMS.register("stripped_chestnut_wood",
-            () -> new BlockItemBase(BlockInit.STRIPPED_CHESTNUT_WOOD.get()));
-
-    public static final RegistryObject<Item> CHESTNUT_PLANK_ITEM = ITEMS.register("chestnut_plank",
-            () -> new BlockItemBase(BlockInit.CHESTNUT_PLANK.get()));
-
-    public static final RegistryObject<Item> CHESTNUT_SAPLING_ITEM = ITEMS.register("chestnut_sapling",
-            () -> new BlockItemBase(BlockInit.CHESTNUT_SAPLING.get()));
-
-    public static final RegistryObject<Item> CHESTNUT_LEAVES_ITEM = ITEMS.register("chestnut_leaves",
-            () -> new BlockItemBase(BlockInit.CHESTNUT_LEAVES.get()));
-
-    public static final RegistryObject<Item> ALMOND_LOG_ITEM = ITEMS.register("almond_log",
-            () -> new BlockItemBase(BlockInit.ALMOND_LOG.get()));
-
-    public static final RegistryObject<Item> ALMOND_WOOD_ITEM = ITEMS.register("almond_wood",
-            () -> new BlockItemBase(BlockInit.ALMOND_WOOD.get()));
-
-    public static final RegistryObject<Item> STRIPPED_ALMOND_LOG_ITEM = ITEMS.register("stripped_almond_log",
-            () -> new BlockItemBase(BlockInit.STRIPPED_ALMOND_LOG.get()));
-
-    public static final RegistryObject<Item> STRIPPED_ALMOND_WOOD_ITEM = ITEMS.register("stripped_almond_wood",
-            () -> new BlockItemBase(BlockInit.STRIPPED_ALMOND_WOOD.get()));
-
-    public static final RegistryObject<Item> ALMOND_PLANK_ITEM = ITEMS.register("almond_plank",
-            () -> new BlockItemBase(BlockInit.ALMOND_PLANK.get()));
-
-    public static final RegistryObject<Item> ALMOND_SAPLING_ITEM = ITEMS.register("almond_sapling",
-            () -> new BlockItemBase(BlockInit.ALMOND_SAPLING.get()));
-
-    public static final RegistryObject<Item> ALMOND_LEAVES_ITEM = ITEMS.register("almond_leaves",
-            () -> new BlockItemBase(BlockInit.ALMOND_LEAVES.get()));
-
-    public static final RegistryObject<Item> CUTTING_BOARD_ITEM = ITEMS.register("cutting_board",
-            () -> new BlockItemBase(BlockInit.CUTTING_BOARD.get()));
-
-    public static final RegistryObject<Item> DESICCATOR_ITEM = ITEMS.register("desiccator",
-            () -> new BlockItemBase(BlockInit.DESICCATOR.get()));
-
-
     // === HERBS, SPICES, SEASONINGS === //
 
     public static final RegistryObject<Item> ROSEMARY = ITEMS.register("rosemary",
@@ -180,13 +108,15 @@ public class ItemInit {
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).food(new Food.Builder().nutrition(0)
                     .saturationMod(-0.5F).fast().build())));
 
+    public static final RegistryObject<Item> ALMOND = ITEMS.register("almond",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).food(new Food.Builder().nutrition(1)
+                    .saturationMod(0.5F).fast().build())));
+
     public static final RegistryObject<Item> CHESTNUT = ITEMS.register("chestnut",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 
     public static final RegistryObject<Item> OPEN_CHESTNUT = ITEMS.register("open_chestnut",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
-
-
 
 
     // === FRUIT === //
@@ -202,4 +132,82 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_APPLE_SLICES = ITEMS.register("dried_apple_slices",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).fireResistant().food(new Food.Builder().nutrition(2)
                     .saturationMod(0.2F).fast().build())));
+
+    // === MEALS === //
+
+    public static final RegistryObject<Item> ADVENTURING_RATIONS = ITEMS.register("adventuring_ration",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_FOOD).fireResistant().food(new Food.Builder().nutrition(16)
+                    .saturationMod(12.5F).build())));
+
+
+    // === BLOCK ITEMS === //
+
+    public static final RegistryObject<Item> OLIVE_LOG_ITEM = ITEMS.register("olive_log",
+            () -> new BlockItemBase(BlockInit.OLIVE_LOG.get()));
+
+    public static final RegistryObject<Item> OLIVE_WOOD_ITEM = ITEMS.register("olive_wood",
+            () -> new BlockItemBase(BlockInit.OLIVE_WOOD.get()));
+
+    public static final RegistryObject<Item> STRIPPED_OLIVE_LOG_ITEM = ITEMS.register("stripped_olive_log",
+            () -> new BlockItemBase(BlockInit.STRIPPED_OLIVE_LOG.get()));
+
+    public static final RegistryObject<Item> STRIPPED_OLIVE_WOOD_ITEM = ITEMS.register("stripped_olive_wood",
+            () -> new BlockItemBase(BlockInit.STRIPPED_OLIVE_WOOD.get()));
+
+    public static final RegistryObject<Item> OLIVE_PLANK_ITEM = ITEMS.register("olive_plank",
+            () -> new BlockItemBase(BlockInit.OLIVE_PLANK.get()));
+
+    public static final RegistryObject<Item> OLIVE_LEAVES_ITEM = ITEMS.register("olive_leaves",
+            () -> new BlockItemBase(BlockInit.OLIVE_LEAVES.get()));
+
+    public static final RegistryObject<Item> OLIVE_SAPLING_ITEM = ITEMS.register("olive_sapling",
+            () -> new BlockItemBase(BlockInit.OLIVE_SAPLING.get()));
+
+    public static final RegistryObject<Item> CHESTNUT_LOG_ITEM = ITEMS.register("chestnut_log",
+            () -> new BlockItemBase(BlockInit.CHESTNUT_LOG.get()));
+
+    public static final RegistryObject<Item> CHESTNUT_WOOD_ITEM = ITEMS.register("chestnut_wood",
+            () -> new BlockItemBase(BlockInit.CHESTNUT_WOOD.get()));
+
+    public static final RegistryObject<Item> STRIPPED_CHESTNUT_LOG_ITEM = ITEMS.register("stripped_chestnut_log",
+            () -> new BlockItemBase(BlockInit.STRIPPED_CHESTNUT_LOG.get()));
+
+    public static final RegistryObject<Item> STRIPPED_CHESTNUT_WOOD_ITEM = ITEMS.register("stripped_chestnut_wood",
+            () -> new BlockItemBase(BlockInit.STRIPPED_CHESTNUT_WOOD.get()));
+
+    public static final RegistryObject<Item> CHESTNUT_PLANK_ITEM = ITEMS.register("chestnut_plank",
+            () -> new BlockItemBase(BlockInit.CHESTNUT_PLANK.get()));
+
+    public static final RegistryObject<Item> CHESTNUT_SAPLING_ITEM = ITEMS.register("chestnut_sapling",
+            () -> new BlockItemBase(BlockInit.CHESTNUT_SAPLING.get()));
+
+    public static final RegistryObject<Item> CHESTNUT_LEAVES_ITEM = ITEMS.register("chestnut_leaves",
+            () -> new BlockItemBase(BlockInit.CHESTNUT_LEAVES.get()));
+
+    public static final RegistryObject<Item> ALMOND_LOG_ITEM = ITEMS.register("almond_log",
+            () -> new BlockItemBase(BlockInit.ALMOND_LOG.get()));
+
+    public static final RegistryObject<Item> ALMOND_WOOD_ITEM = ITEMS.register("almond_wood",
+            () -> new BlockItemBase(BlockInit.ALMOND_WOOD.get()));
+
+    public static final RegistryObject<Item> STRIPPED_ALMOND_LOG_ITEM = ITEMS.register("stripped_almond_log",
+            () -> new BlockItemBase(BlockInit.STRIPPED_ALMOND_LOG.get()));
+
+    public static final RegistryObject<Item> STRIPPED_ALMOND_WOOD_ITEM = ITEMS.register("stripped_almond_wood",
+            () -> new BlockItemBase(BlockInit.STRIPPED_ALMOND_WOOD.get()));
+
+    public static final RegistryObject<Item> ALMOND_PLANK_ITEM = ITEMS.register("almond_plank",
+            () -> new BlockItemBase(BlockInit.ALMOND_PLANK.get()));
+
+    public static final RegistryObject<Item> ALMOND_SAPLING_ITEM = ITEMS.register("almond_sapling",
+            () -> new BlockItemBase(BlockInit.ALMOND_SAPLING.get()));
+
+    public static final RegistryObject<Item> ALMOND_LEAVES_ITEM = ITEMS.register("almond_leaves",
+            () -> new BlockItemBase(BlockInit.ALMOND_LEAVES.get()));
+
+    public static final RegistryObject<Item> CUTTING_BOARD_ITEM = ITEMS.register("cutting_board",
+            () -> new BlockItemBase(BlockInit.CUTTING_BOARD.get()));
+
+    public static final RegistryObject<Item> DESICCATOR_ITEM = ITEMS.register("desiccator",
+            () -> new BlockItemBase(BlockInit.DESICCATOR.get()));
 }

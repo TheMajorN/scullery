@@ -2,6 +2,7 @@ package com.themajorn.scullery;
 
 import com.google.common.collect.ImmutableMap;
 import com.themajorn.scullery.client.gui.DesiccatorScreen;
+import com.themajorn.scullery.client.tileentityrender.DesiccatorTileEntityRenderer;
 import com.themajorn.scullery.common.biomes.ModBiomeGeneration;
 import com.themajorn.scullery.core.util.*;
 import net.minecraft.block.Block;
@@ -12,6 +13,7 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -73,6 +75,8 @@ public class Scullery {
         RenderTypeLookup.setRenderLayer(BlockInit.DESICCATOR.get(), RenderType.translucent());
 
         ScreenManager.register(ContainerTypeInit.DESICCATOR_CONTAINER.get(), DesiccatorScreen::new);
+
+        ClientRegistry.bindTileEntityRenderer(TileEntityTypeInit.DESICCATOR_TILE_ENTITY.get(), DesiccatorTileEntityRenderer::new);
     }
 }
 
@@ -82,7 +86,5 @@ TO-DO LIST:
 PHASE I
 ========
 Desiccator
-Nuts - Almonds
-Adventuring Ration - Wrap jerky, dried fruit, hardtack, and nuts in paper
 ========
  */

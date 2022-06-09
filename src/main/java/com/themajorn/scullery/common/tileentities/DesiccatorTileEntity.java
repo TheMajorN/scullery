@@ -4,18 +4,25 @@ import com.themajorn.scullery.Scullery;
 import com.themajorn.scullery.common.containers.DesiccatorContainer;
 import com.themajorn.scullery.core.util.ItemInit;
 import com.themajorn.scullery.core.util.TileEntityTypeInit;
+import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.crafting.AbstractCookingRecipe;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.capabilities.Capability;
@@ -27,12 +34,12 @@ import net.minecraftforge.items.ItemStackHandler;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class DesiccatorTileEntity extends TileEntity {
+public class DesiccatorTileEntity extends TileEntity implements ITickableTileEntity {
 
     private final ItemStackHandler itemHandler = createHandler();
     private final LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
 
-    public static int slots = 5;
+    public static int slots = 1;
     protected NonNullList<ItemStack> items = NonNullList.withSize(slots, ItemStack.EMPTY);
 
     protected DesiccatorTileEntity(TileEntityType<?> type) {
@@ -66,7 +73,8 @@ public class DesiccatorTileEntity extends TileEntity {
             public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
                 switch (slot) {
                     case 0: return stack.getItem() == Items.APPLE;
-                    case 1: return stack.getItem() == Items.SWEET_BERRIES;
+                    case 1: return stack.getItem() == Items.SWEET_BERRIES ||
+                            stack.getItem() == ItemInit.DRIED_APPLE_SLICES.get();
                     default:
                         return false;
                 }
@@ -89,6 +97,10 @@ public class DesiccatorTileEntity extends TileEntity {
         };
     }
 
+    public ItemStack getItem() {
+        return this.items.get(0);
+    }
+
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
@@ -98,4 +110,10 @@ public class DesiccatorTileEntity extends TileEntity {
 
         return super.getCapability(cap, side);
     }
+
+    @Override
+    public void tick() {
+
+    }
+
 }

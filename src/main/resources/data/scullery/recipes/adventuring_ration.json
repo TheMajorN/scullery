@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "DBH",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:paper"
+    },
+    "B": {
+      "item": "scullery:beef_jerky"
+    },
+    "H": {
+      "item": "scullery:hardtack"
+    },
+    "D": {
+      "item": "scullery:dried_apple"
+    }
+  },
+  "result": {
+    "item": "scullery:adventuring_ration",
+    "count": 1
+  }
+}
