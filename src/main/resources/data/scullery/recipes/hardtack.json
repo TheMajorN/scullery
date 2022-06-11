@@ -3,7 +3,7 @@
   "ingredient": {
     "item": "scullery:dough_balls"
   },
-  "result": "scullery:hardtack",
+  "result": "scullery:hardtack_pieces",
   "experience": 0.35,
   "cookingtime": 300
 }

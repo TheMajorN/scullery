@@ -118,7 +118,7 @@ public class ItemInit {
     public static final RegistryObject<Item> CHESTNUT = ITEMS.register("chestnut",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 
-    public static final RegistryObject<Item> OPEN_CHESTNUT = ITEMS.register("open_chestnut",
+    public static final RegistryObject<Item> OPEN_CHESTNUT = ITEMS.register("chestnut_open",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 
 
