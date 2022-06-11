@@ -47,6 +47,9 @@ public class ItemInit {
     public static final RegistryObject<Item> SALT = ITEMS.register("salt",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MISC)));
 
+    // === SEEDS (REGISTER THE SEEDS HERE, EVAN) === //
+
+
 
     // === INGREDIENTS === //
 
