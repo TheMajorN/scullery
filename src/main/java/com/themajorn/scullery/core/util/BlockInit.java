@@ -30,10 +30,10 @@ public class BlockInit {
             () -> new BlueberryBushBlock(AbstractBlock.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
 
     public static final RegistryObject<Block> ROSEMARY = BLOCKS.register("rosemary_crop",
-            () -> new RosemaryBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SAPLING)));
+            () -> new RosemaryBlock(AbstractBlock.Properties.copy(Blocks.WHEAT)));
 
     public static final RegistryObject<Block> THYME = BLOCKS.register("thyme_crop",
-            () -> new ThymeBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SAPLING)));
+            () -> new ThymeBlock(AbstractBlock.Properties.copy(Blocks.WHEAT)));
 
     public static final RegistryObject<Block> PEPPER = BLOCKS.register("pepper_crop",
             () -> new PepperBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SAPLING)));
@@ -45,7 +45,7 @@ public class BlockInit {
             () -> new MintBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SAPLING)));
 
     public static final RegistryObject<Block> OREGANO = BLOCKS.register("oregano_crop",
-            () -> new OreganoBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SAPLING)));
+            () -> new OreganoBlock(AbstractBlock.Properties.copy(Blocks.WHEAT)));
 
     // === TREES === //
 

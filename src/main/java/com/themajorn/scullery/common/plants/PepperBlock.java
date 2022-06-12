@@ -34,4 +34,10 @@ public class PepperBlock extends CropsBlock {
     public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
         return super.getShape(p_220053_1_, p_220053_2_, p_220053_3_, p_220053_4_);
     }
+
+    @Override
+    public int getMaxAge() {
+        return 5;
+    }
+
 }
