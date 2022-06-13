@@ -38,7 +38,7 @@ public class ModConfiguredFeatures {
                     new BaseTreeFeatureConfig.Builder(
                             new SimpleBlockStateProvider(BlockInit.CHESTNUT_LOG.get().defaultBlockState()),
                             new SimpleBlockStateProvider(BlockInit.CHESTNUT_LEAVES.get().defaultBlockState()),
-                            new BlobFoliagePlacer(FeatureSpread.fixed(4), FeatureSpread.fixed(7), 3),
+                            new BlobFoliagePlacer(FeatureSpread.fixed(5), FeatureSpread.fixed(5), 3),
                             new FancyTrunkPlacer(5, 3, 2),
                             new ThreeLayerFeature(3, 1, 0, 1, 1, OptionalInt.empty()))).ignoreVines().build()));
 

@@ -1,6 +1,6 @@
 {
-	 "parent": "minecraft:block/crop",
+	 "parent": "minecraft:block/cross",
 	 "textures": {
-	 "crop": "scullery:blocks/basil_stage4"
+	 "cross": "scullery:blocks/basil_stage4"
 	}
 }
